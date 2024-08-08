@@ -8,7 +8,27 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            display: flex;
+        }
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            background-color: #343a40;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        #sidebar .nav-link {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        #sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
         }
         .product-card {
             border: 1px solid #ddd;
@@ -34,47 +54,95 @@
 </head>
 <body>
 
-<header class="bg-dark text-white text-center py-3">
-    <h1>Tienda de Computadoras</h1>
-</header>
+<!-- Sidebar -->
+<nav id="sidebar" class="bg-dark">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Laptops</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Desktops</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Accesorios</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Ofertas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+        </li>
+    </ul>
+</nav>
 
-<div class="container my-5">
-    <div class="row">
-        <!-- Product 1 -->
-        <div class="col-md-4">
-            <div class="product-card card mb-4 shadow-sm">
-                <img src="https://example.com/computer1.jpg" class="card-img-top product-img" alt="Computadora 1">
-                <div class="card-body">
-                    <h5 class="product-title">Computadora de Escritorio XYZ</h5>
-                    <p class="product-price">$500</p>
-                    <p class="card-text">Excelente computadora de escritorio para tareas diarias y trabajo de oficina.</p>
-                    <a href="#" class="btn btn-primary">Comprar ahora</a>
+<!-- Content -->
+<div id="content">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Tienda de Computadoras</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product List -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="product-card card mb-4 shadow-sm">
+                    <img src="https://example.com/computer1.jpg" class="card-img-top product-img" alt="Computadora 1">
+                    <div class="card-body">
+                        <h5 class="product-title">Computadora de Escritorio XYZ</h5>
+                        <p class="product-price">$500</p>
+                        <p class="card-text">Excelente computadora de escritorio para tareas diarias y trabajo de oficina.</p>
+                        <a href="#" class="btn btn-primary">Comprar ahora</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Product 2 -->
-        <div class="col-md-4">
-            <div class="product-card card mb-4 shadow-sm">
-                <img src="https://example.com/computer2.jpg" class="card-img-top product-img" alt="Computadora 2">
-                <div class="card-body">
-                    <h5 class="product-title">Laptop ABC</h5>
-                    <p class="product-price">$750</p>
-                    <p class="card-text">Laptop portátil y potente, ideal para trabajo y entretenimiento.</p>
-                    <a href="#" class="btn btn-primary">Comprar ahora</a>
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="product-card card mb-4 shadow-sm">
+                    <img src="https://example.com/computer2.jpg" class="card-img-top product-img" alt="Computadora 2">
+                    <div class="card-body">
+                        <h5 class="product-title">Laptop ABC</h5>
+                        <p class="product-price">$750</p>
+                        <p class="card-text">Laptop portátil y potente, ideal para trabajo y entretenimiento.</p>
+                        <a href="#" class="btn btn-primary">Comprar ahora</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Product 3 -->
-        <div class="col-md-4">
-            <div class="product-card card mb-4 shadow-sm">
-                <img src="https://example.com/computer3.jpg" class="card-img-top product-img" alt="Computadora 3">
-                <div class="card-body">
-                    <h5 class="product-title">Gaming PC DEF</h5>
-                    <p class="product-price">$1200</p>
-                    <p class="card-text">PC gaming de alta gama con excelentes gráficos y rendimiento.</p>
-                    <a href="#" class="btn btn-primary">Comprar ahora</a>
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="product-card card mb-4 shadow-sm">
+                    <img src="https://example.com/computer3.jpg" class="card-img-top product-img" alt="Computadora 3">
+                    <div class="card-body">
+                        <h5 class="product-title">Gaming PC DEF</h5>
+                        <p class="product-price">$1200</p>
+                        <p class="card-text">PC gaming de alta gama con excelentes gráficos y rendimiento.</p>
+                        <a href="#" class="btn btn-primary">Comprar ahora</a>
+                    </div>
                 </div>
             </div>
         </div>
